@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      
+        <a href="index.html">Home</a>
+        <a class='table' href="table.html">Tables</a>
+        <a class='acc' href="ques.html">Questions</a>
+    </nav>
+</header>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Father's Name</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Roll no.</th>
+                    <th scope="col">Home Town</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Karan</th>
+                    <td>Manoj</td>
+                    <td>21-05-2005</td>
+                    <td>Male</td>
+                    <td>10th</td>
+                    <td>12</td>
+                    <td>Mansa, Punjab</td>
+
+                    
+                </tr>
+                <tr>
+                    <th scope="row">Ram</th>
+                    <td>Sham</td>
+                    <td>25-10-2009</td>
+                    <td>Male</td>
+                    <td>5th</td>
+                    <td>2</td>
+                    <td>Pataila, Punjab</td>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">Mohan</th>
+                    <td>Ajay</td>
+                    <td>10-02-2007</td>
+                    <td>Male</td>
+                    <td>7th</td>
+                    <td>5</td>
+                    <td>Chandigarh</td>
+                </tr>
+                <tr>
+                    <th scope="row">Raman</th>
+                    <td>Jeevan</td>
+                    <td>19-8-2004</td>
+                    <td>Male</td>
+                    <td>9th</td>
+                    <td>7</td>
+                    <td>Panchkula, Haryana</td>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">Ashok</th>
+                    <td>Rampal</td>
+                    <td>25-09-2006</td>
+                    <td>Male</td>
+                    <td>6th</td>
+                    <td>8</td>
+                    <td>Shimla, HP</td>
+                  
+                </tr>
+
+            </tbody>   
+        </table>
+    </div>
+
+
+    <!-- pop-up dialog box, containing a form -->
+<dialog id="favDialog">
+    <p> This is Fee Pending record </p>
+
+    <p>which hold record about student who not submitted their fee yet</p>
+    <p>School name: xyz sr. sec school</p>
+    <p>Please contact if have any query:</p>
+    <p id="telephone"  aria-label="teli">+91 7888722246</p>
+        <button id="close" aria-label="close">&times;</button>
+</div>
+  </dialog>
+  
+  <div>
+    <button id="updateDetails">Contact Us</button>
+  </div>
+  <footer>
+    <div style="margin-top: 5%;" class="main-footer">
+        <h3 style="margin-top: 10px;">&copy Karan Kumar Goyal</h3>
+    </div>
+</footer>
+</body>
+<script>
+    const updateButton = document.getElementById("updateDetails");
+const cancelButton = document.getElementById("close");
+const dialog = document.getElementById("favDialog");
+dialog.returnValue = "favAnimal";
+
+function openCheck(dialog) {
+  if (dialog.open) {
+    console.log("Dialog open");
+  } else {
+    console.log("Dialog closed");
+  }
+}
+
+// Update button opens a modal dialog
+updateButton.addEventListener("click", () => {
+  dialog.showModal();
+  openCheck(dialog);
+});
+
+// Form cancel button closes the dialog box
+cancelButton.addEventListener("click", () => {
+  dialog.close("animalNotChosen");
+  openCheck(dialog);
+});
+</script>
+</html>
